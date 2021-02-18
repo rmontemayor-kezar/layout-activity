@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'pages/index.dart';
-import 'pages/history.dart';
-import 'pages/profile.dart';
+import 'components/drawer.dart' show DrawerComponent;
+import 'pages/index.dart' show IndexPage;
+import 'pages/swo.dart' show SWOPage;
+import 'pages/history.dart' show HistoryPage;
+import 'pages/profile.dart' show ProfilePage;
+import 'utilities/colors.dart' show MyColors;
 
 class Home extends StatefulWidget {
   @override
@@ -12,31 +15,51 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  String _title;
   int _currentPage = 0;
 
   final List<Widget> _pages = [
     IndexPage(),
+    SWOPage(),
     HistoryPage(),
     ProfilePage(),
   ];
 
   @override
+  initState() {
+    super.initState();
+    _title = 'Home';
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('My flutter app'),
+        title: Text(_title, style: TextStyle(color: MyColors.color1)),
+        iconTheme: IconThemeData(color: MyColors.color1),
+        backgroundColor: Colors.white,
       ),
       body: _pages[_currentPage],
       bottomNavigationBar: BottomNavigationBar(
         onTap: onTabTapped,
         currentIndex: _currentPage,
+        selectedItemColor: MyColors.color1,
+        unselectedItemColor: Colors.grey[500],
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(
+              Icons.home,
+            ),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.mail),
+            icon: Icon(Icons.article),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.restore),
             label: 'Messages',
           ),
           BottomNavigationBarItem(
@@ -45,12 +68,35 @@ class _HomeState extends State<Home> {
           ),
         ],
       ),
+      drawer: DrawerComponent(),
     );
   }
 
   void onTabTapped(int index) {
     setState(() {
       _currentPage = index;
+      switch (index) {
+        case 0:
+          {
+            _title = "Home";
+          }
+          break;
+        case 1:
+          {
+            _title = "SWO";
+          }
+          break;
+        case 2:
+          {
+            _title = "History";
+          }
+          break;
+        case 3:
+          {
+            _title = "Profile";
+          }
+          break;
+      }
     });
   }
 }
