@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'components/drawer.dart' show DrawerComponent;
+import 'components/home/drawer.dart' show DrawerComponent;
 import 'pages/index.dart' show IndexPage;
 import 'pages/swo.dart' show SWOPage;
 import 'pages/history.dart' show HistoryPage;
