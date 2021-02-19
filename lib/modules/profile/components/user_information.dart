@@ -106,13 +106,10 @@ class UserInfoComponent extends StatelessWidget {
                   ),
                   Container(
                     alignment: Alignment.centerLeft,
-                    margin: EdgeInsets.only(bottom: 5, left: 30),
+                    margin: EdgeInsets.only(bottom: 20, left: 30),
                     child: MyTextGrayWidget(
                       '09173246193',
                     ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(15),
                   ),
                 ],
               ),
