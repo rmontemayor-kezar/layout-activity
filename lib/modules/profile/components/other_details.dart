@@ -28,6 +28,7 @@ class OtherDetailsComponent extends StatelessWidget {
             child: Column(
               children: [
                 ListTile(
+          //FontWeight Bold
                   title: Text('View Contract'),
                 ),
                 Divider(),
