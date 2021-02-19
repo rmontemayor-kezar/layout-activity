@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../utilities/colors.dart' show MyColors;
+import './widgets/texts.dart' show MyTextGrayWidget;
 
 class BankDetailsComponent extends StatelessWidget {
   @override
@@ -11,25 +13,28 @@ class BankDetailsComponent extends StatelessWidget {
           BoxShadow(
             color: Colors.grey.withOpacity(0.5),
             spreadRadius: 5,
-            blurRadius: 7,
+            blurRadius: 20,
             offset: Offset(0, 3),
           ),
         ],
-        borderRadius: BorderRadius.all(Radius.circular(20)),
       ),
       child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
         margin: EdgeInsets.all(0),
         color: Colors.white,
         child: Column(
           children: [
             Container(
               alignment: Alignment.centerLeft,
-              margin: EdgeInsets.only(bottom: 5, left: 30),
+              margin: EdgeInsets.only(top: 15, left: 30),
               child: Text(
                 "Bank Details",
                 style: TextStyle(
-                  fontSize: 20.0,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
+                  color: MyColors.color1,
                 ),
               ),
             ),
@@ -39,9 +44,8 @@ class BankDetailsComponent extends StatelessWidget {
             Container(
               alignment: Alignment.centerLeft,
               margin: EdgeInsets.only(bottom: 5, left: 30),
-              child: Text(
-                '70 Brighton Ct Brooklyn, NY 11235 USA',
-                textAlign: TextAlign.left,
+              child: MyTextGrayWidget(
+                'Account No.: ' + '1234 5678 9012',
               ),
             ),
             Divider(
@@ -50,9 +54,8 @@ class BankDetailsComponent extends StatelessWidget {
             Container(
               alignment: Alignment.centerLeft,
               margin: EdgeInsets.only(bottom: 5, left: 30),
-              child: Text(
-                '70 Brighton Ct Brooklyn, NY 11235 USA',
-                textAlign: TextAlign.left,
+              child: MyTextGrayWidget(
+                'Account Name: ' + 'Jane G. Smith',
               ),
             ),
             Divider(
@@ -61,10 +64,22 @@ class BankDetailsComponent extends StatelessWidget {
             Container(
               alignment: Alignment.centerLeft,
               margin: EdgeInsets.only(bottom: 5, left: 30),
-              child: Text(
-                '70 Brighton Ct Brooklyn, NY 11235 USA',
-                textAlign: TextAlign.left,
+              child: MyTextGrayWidget(
+                'Bank Name: ' + 'JP Morgan & Chase',
               ),
+            ),
+            Divider(
+              height: 25,
+            ),
+            Container(
+              alignment: Alignment.centerLeft,
+              margin: EdgeInsets.only(bottom: 5, left: 30),
+              child: MyTextGrayWidget(
+                'Contact No.: ' + '+639173246193',
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(15),
             ),
           ],
         ),

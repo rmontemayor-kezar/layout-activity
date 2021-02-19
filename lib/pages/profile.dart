@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../components/profile/user_information.dart' show UserInfoComponent;
-import '../components/profile/bank_details.dart';
+import '../components/profile/bank_details.dart' show BankDetailsComponent;
+import '../components/profile/other_details.dart' show OtherDetailsComponent;
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -15,11 +16,14 @@ class _ProfilePageState extends State<ProfilePage> {
     return SafeArea(
       top: false,
       bottom: false,
-      child: Column(
-        children: [
-          UserInfoComponent(),
-          BankDetailsComponent(),
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            UserInfoComponent(),
+            BankDetailsComponent(),
+            OtherDetailsComponent()
+          ],
+        ),
       ),
     );
   }

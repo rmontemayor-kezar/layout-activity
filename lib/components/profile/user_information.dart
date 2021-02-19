@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './widgets/texts.dart' show MyTextGrayWidget;
 
 class UserInfoComponent extends StatelessWidget {
   @override
@@ -33,13 +34,21 @@ class UserInfoComponent extends StatelessWidget {
             child: Column(
               children: [
                 Container(
+                  margin: EdgeInsets.only(top: 10, bottom: 10),
+                  decoration: new BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: new Border.all(
+                      color: Colors.white,
+                      width: 1.0,
+                    ),
+                  ),
                   child: CircleAvatar(
                     backgroundImage: AssetImage('assets/user_default.png'),
                     radius: 60,
                   ),
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
                 ),
                 Container(
+                  margin: EdgeInsets.only(bottom: 10),
                   child: Text(
                     "Robert Montemayor",
                     style: TextStyle(
@@ -53,6 +62,12 @@ class UserInfoComponent extends StatelessWidget {
           ),
           Container(
             child: Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+                  bottomRight: Radius.circular(20),
+                  bottomLeft: Radius.circular(20),
+                ),
+              ),
               margin: EdgeInsets.all(0),
               color: Colors.white,
               child: Column(
@@ -63,10 +78,8 @@ class UserInfoComponent extends StatelessWidget {
                   Container(
                     alignment: Alignment.centerLeft,
                     margin: EdgeInsets.only(bottom: 5, left: 30),
-                    child: Text(
-                      '70 Brighton Ct Brooklyn, NY 11235 USA',
-                      textAlign: TextAlign.left,
-                    ),
+                    child: MyTextGrayWidget(
+                        '70 Brighton Ct Brooklyn, NY 11235 USA'),
                   ),
                   Divider(
                     height: 25,
@@ -74,9 +87,8 @@ class UserInfoComponent extends StatelessWidget {
                   Container(
                     alignment: Alignment.centerLeft,
                     margin: EdgeInsets.only(bottom: 5, left: 30),
-                    child: Text(
+                    child: MyTextGrayWidget(
                       'January 21, 1994',
-                      textAlign: TextAlign.left,
                     ),
                   ),
                   Divider(
@@ -85,21 +97,22 @@ class UserInfoComponent extends StatelessWidget {
                   Container(
                     alignment: Alignment.centerLeft,
                     margin: EdgeInsets.only(bottom: 5, left: 30),
-                    child: Text(
+                    child: MyTextGrayWidget(
                       'jsmith@gmail.com',
-                      textAlign: TextAlign.left,
                     ),
                   ),
                   Divider(
-                    height: 25,
+                    height: 24,
                   ),
                   Container(
                     alignment: Alignment.centerLeft,
                     margin: EdgeInsets.only(bottom: 5, left: 30),
-                    child: Text(
+                    child: MyTextGrayWidget(
                       '09173246193',
-                      textAlign: TextAlign.left,
                     ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(15),
                   ),
                 ],
               ),
