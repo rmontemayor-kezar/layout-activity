@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../utilities/colors.dart' show MyColors;
+import '../../../utilities/colors.dart' show MyColors;
 
 class OtherDetailsComponent extends StatelessWidget {
   final String _referralCodeSubtitle =

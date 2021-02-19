@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'components/home/drawer.dart' show DrawerComponent;
-import 'pages/index.dart' show IndexPage;
-import 'pages/swo.dart' show SWOPage;
-import 'pages/history.dart' show HistoryPage;
-import 'pages/profile.dart' show ProfilePage;
 import 'utilities/colors.dart' show MyColors;
+import 'modules/home/components/drawer.dart' show DrawerComponent;
+import 'modules/home/pages/index.dart' show IndexPage;
+import 'modules/swo/pages/swo.dart' show SWOPage;
+import 'modules/history/pages/history.dart' show HistoryPage;
+import 'modules/profile/pages/profile.dart' show ProfilePage;
 
 class Home extends StatefulWidget {
   @override
@@ -35,6 +35,8 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(color: MyColors.color1),
+        backgroundColor: Colors.white,
         title: Text(
           _title,
           style: TextStyle(
@@ -43,10 +45,9 @@ class _HomeState extends State<Home> {
             fontSize: 25,
           ),
         ),
-        iconTheme: IconThemeData(color: MyColors.color1),
-        backgroundColor: Colors.white,
       ),
       body: _pages[_currentPage],
+      drawer: DrawerComponent(),
       bottomNavigationBar: BottomNavigationBar(
         onTap: onTabTapped,
         currentIndex: _currentPage,
@@ -75,7 +76,6 @@ class _HomeState extends State<Home> {
           ),
         ],
       ),
-      drawer: DrawerComponent(),
     );
   }
 

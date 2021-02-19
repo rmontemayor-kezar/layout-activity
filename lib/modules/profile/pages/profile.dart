@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../components/profile/user_information.dart' show UserInfoComponent;
-import '../components/profile/bank_details.dart' show BankDetailsComponent;
-import '../components/profile/other_details.dart' show OtherDetailsComponent;
+import '../components/user_information.dart' show UserInfoComponent;
+import '../components/bank_details.dart' show BankDetailsComponent;
+import '../components/other_details.dart' show OtherDetailsComponent;
 
 class ProfilePage extends StatefulWidget {
   @override
