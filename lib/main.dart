@@ -9,6 +9,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'My flutter App',
       home: Home(),
+  //Added this to remove debug banner
+    debugShowCheckedModeBanner: false,
     );
   }
 }

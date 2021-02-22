@@ -8,6 +8,7 @@ class UserInfoComponent extends StatelessWidget {
       alignment: Alignment.center,
       margin: EdgeInsets.all(20),
       decoration: BoxDecoration(
+    //BoxShadow too strong. This is okay but you may also try using Card Widget.     
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.5),
@@ -75,6 +76,7 @@ class UserInfoComponent extends StatelessWidget {
                   Divider(
                     height: 25,
                   ),
+        //Add right margin. Do the same on your bank details component
                   Container(
                     alignment: Alignment.centerLeft,
                     margin: EdgeInsets.only(bottom: 5, left: 30),

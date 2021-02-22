@@ -48,12 +48,14 @@ class _HomeState extends State<Home> {
       ),
       body: _pages[_currentPage],
       drawer: DrawerComponent(),
+
+  //This is better than the existing BottomNavBar. Good job.
       bottomNavigationBar: BottomNavigationBar(
         onTap: onTabTapped,
         currentIndex: _currentPage,
         selectedItemColor: MyColors.color1,
         unselectedItemColor: Colors.grey[500],
-        showSelectedLabels: false,
+        showSelectedLabels: true,
         showUnselectedLabels: false,
         items: [
           BottomNavigationBarItem(
@@ -64,11 +66,11 @@ class _HomeState extends State<Home> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.article),
-            label: 'Home',
+            label: 'Service Work Order',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.restore),
-            label: 'Messages',
+            label: 'History',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
